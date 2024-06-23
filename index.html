@@ -12,17 +12,13 @@
 
     <div>
         <span>
-
             <label for="weeks">Number of week in Rotation:</label>
             <input type="number" name="weeks" id="weeks" min="1" max="24">
         </span>
         <span>
-
             <label for="break">Length of Break</label>
             <input type="number" name="break" id="break">
         </span>
-
-
     </div>
 
     <div>
@@ -36,52 +32,11 @@
                 <th>Friday</th>
                 <th>Saturday</th>
             </tr>
-            <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-            </tr>
-
         </table>
     </div>
 
     <div>
-        <div>
-            <table id="calc-table">
-                <tr>
-                    <th>Sunday</th>
-                    <th>Monday</th>
-                    <th>Tuesday</th>
-                    <th>Wednesday</th>
-                    <th>Thursday</th>
-                    <th>Friday</th>
-                    <th>Saturday</th>
-                </tr>
-                <tr>
-                    <td><input type="text" readonly></td>
-                    <td><input type="text" readonly></td>
-                    <td><input type="text" readonly></td>
-                    <td><input type="text" readonly></td>
-                    <td><input type="text" readonly></td>
-                    <td><input type="text" readonly></td>
-                    <td><input type="text" readonly></td>
-                </tr>
-            </table>
-        </div>
-    </div>
-
-    <div>
-        <button id="calculate-roster">
-            Calculate
-        </button>
-    </div>
-
-    <div>
-        <table id="test-table">
+        <table id="calc-table">
             <tr>
                 <th>Sunday</th>
                 <th>Monday</th>
@@ -91,11 +46,17 @@
                 <th>Friday</th>
                 <th>Saturday</th>
             </tr>
+            <tr>
+                <td type="text"></td>
+            </tr>
         </table>
     </div>
 
-
-
+    <div>
+        <button id="calculate-roster">
+            Calculate
+        </button>
+    </div>
 
     <script src="assets/js/script.js"></script>
 </body>
