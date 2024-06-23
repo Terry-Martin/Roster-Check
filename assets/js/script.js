@@ -22,9 +22,14 @@ function myFunction2() {
   let startMinutes = (parseInt(timeArray1[0], 10) * 60) + (parseInt(timeArray1[1], 10));
   let endMinutes = (parseInt(timeArray2[0], 10) * 60) + (parseInt(timeArray2[1], 10));
 
-let shiftLength = (endMinutes - startMinutes) / 60;
-Math.round(shiftLength * 100) / 100;
-alert(shiftLength);
+  let shiftLength = (endMinutes - startMinutes) / 60;
+
+  shiftLength = shiftLength.toFixed(2);
+  if (shiftLength < 0) {
+    alert("Shift end time needs to be after shift start time");
+  } else {
+    alert(shiftLength);
+  }
 
 }
 
