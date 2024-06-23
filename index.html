@@ -13,7 +13,7 @@
     <div>
         <span>
             <label for="weeks">Number of week in Rotation:</label>
-            <input type="number" name="weeks" id="weeks" min="1" max="24">
+            <input type="number" name="weeks" id="weeks" min="1" max="24" value="1">
         </span>
         <span>
             <label for="break">Length of Break</label>
@@ -25,15 +25,47 @@
         <table id="input-table">
             <tr>
                 <th>Sunday</th>
+                <th></th>
                 <th>Monday</th>
+                <th></th>
                 <th>Tuesday</th>
+                <th></th>
                 <th>Wednesday</th>
+                <th></th>
                 <th>Thursday</th>
+                <th></th>
                 <th>Friday</th>
+                <th></th>
                 <th>Saturday</th>
+            </tr>
+            <tr>
+                <th>Start</th>
+                <th>End</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Start</th>
+                <th>End</th>
             </tr>
         </table>
     </div>
+
+    <br>
+
+    <div>
+        <button id="calculate-roster">
+            Calculate
+        </button>
+    </div>
+
+    <br>
 
     <div>
         <table id="calc-table">
@@ -46,15 +78,18 @@
                 <th>Friday</th>
                 <th>Saturday</th>
             </tr>
-            <tr>
-                <td type="text"></td>
-            </tr>
         </table>
     </div>
 
+    <div> 
+        <input id="one" type="time">
+        <input id="two" type="time">
+    </div>
+
+
     <div>
-        <button id="calculate-roster">
-            Calculate
+        <button id="calculate-shift">
+            Calculate Shift
         </button>
     </div>
 
