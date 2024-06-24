@@ -12,7 +12,7 @@ displayShift.addEventListener("click", displayShifts);
 function addRows() {
   let noOfWeeks = document.getElementById("weeks").value;
   let inputTable = document.getElementById("input-table");
-  let calcTable = document.getElementById("calc-table");
+  //let calcTable = document.getElementById("calc-table");
 
   if (noOfWeeks < 1) {
     alert("Rotation needs to be a minimum of 1 week")
@@ -41,7 +41,7 @@ function addRows() {
       let c13 = row.insertCell(12);
       let c14 = row.insertCell(13);
 
-      c1.innerHTML = "<td><input type='time' value='09:00'></td>";
+      c1.innerHTML = "<td><input type='time' value='02:00' id = 'work'></td>";
       c2.innerHTML = "<td><input type='time' value='18:00'></td>";
       c3.innerHTML = "<td><input type='time' value='09:00'></td>";
       c4.innerHTML = "<td><input type='time' value='18:00'></td>";
@@ -58,6 +58,21 @@ function addRows() {
 
     }
 
+    populateShiftCalcTable();
+
+  }
+}
+
+populateShiftCalcTable();
+
+function populateShiftCalcTable() {
+
+  let noOfWeeks = document.getElementById("weeks").value;
+  let calcTable = document.getElementById("calc-table");
+
+  if (noOfWeeks < 1) {
+    alert("Rotation needs to be a minimum of 1 week")
+  } else {
     for (let i = 1; i < calcTable.rows.length;) {
       calcTable.deleteRow(i);
     }
@@ -74,13 +89,13 @@ function addRows() {
       let c6 = row.insertCell(5);
       let c7 = row.insertCell(6);
 
-      c1.innerText = "0800";
-      c2.innerText = "0900";
-      c3.innerText = "0900";
-      c4.innerText = "0900";
-      c5.innerText = "0900";
-      c6.innerText = "0900";
-      c7.innerHTML = "0800";
+      c1.innerText = 1;
+      c2.innerText = parseInt(c1.innerText) + 22;
+      c3.innerText = 3;
+      c4.innerText = 4;
+      c5.innerText = 5;
+      c6.innerText = 6;
+      c7.innerHTML = 7;
 
     }
   }
@@ -111,8 +126,7 @@ function calcShiftLength() {
 }
 
 function displayShifts() {
-  alert("Hi");
   let displayCell1 = calcShiftLength();
   alert(displayCell1);
-  
+
 }
