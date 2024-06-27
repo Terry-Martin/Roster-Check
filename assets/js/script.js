@@ -67,17 +67,29 @@ function addRows() {
       c13.id = "cell13";
       c14.id = "cell14";
 
-      //c1.innerText = "09:00";
-      //c2.innerText = "18:00";
+      c1.innerText = "09:00";
+      c2.innerText = "18:00";
+      c3.innerText = "09:00";
+      c4.innerText = "18:00";
+      c5.innerText = "09:00";
+      c6.innerText = "18:00";
+      c7.innerText = "09:00";
+      c8.innerText = "18:00";
+      c9.innerText = "09:00";
+      c10.innerText = "18:00";
+      c11.innerText = "09:00";
+      c12.innerText = "18:00";
+      c13.innerText = "09:00";
+      c14.innerText = "18:00";
 
     }
 
-    populateShiftCalcTable();
+    //populateShiftCalcTable();
 
   }
 }
 
-populateShiftCalcTable();
+//populateShiftCalcTable();
 
 function populateShiftCalcTable() {
 
@@ -138,7 +150,7 @@ function populateShiftCalcTable() {
       c4.innerText = 4;
       c5.innerText = 5;
       c6.innerText = 6;
-      c7.innerHTML = 7;
+      c7.innerText = 7;
 
     }
   }
@@ -148,11 +160,6 @@ function calcShiftLength() {
 
   let shiftStartTime = document.getElementById("cell1");
   let shiftEndTime = document.getElementById("cell2");
-
-  alert (shiftStartTime.innerHTML);
-  alert (shiftStartTime.value);
-  shiftStartTime.innerText = "22:25";
-  shiftEndTime.innerText = "23:30";
 
   let timeArray1 = shiftStartTime.innerText.split(":");
   let timeArray2 = shiftEndTime.innerText.split(":");
