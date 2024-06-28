@@ -6,12 +6,18 @@ rosterLength.addEventListener("click", addRows);
 let calcShift = document.getElementById("calculate-shift");
 calcShift.addEventListener("click", calcShiftLength);
 
+
+
+
 function addRows() {
   let noOfWeeks = document.getElementById("weeks").value;
   let inputTable = document.getElementById("input-table");
 
   if (noOfWeeks < 1) {
     alert("Rotation needs to be a minimum of 1 week")
+    document.getElementById("weeks").value = 1;
+    addRows();
+
   } else {
 
     for (let i = 2; i < inputTable.rows.length;) {
@@ -21,6 +27,8 @@ function addRows() {
     for (let i = 0; i < noOfWeeks; i++) {
 
       let row = inputTable.insertRow(-1);
+
+      let cellNumber = 1;
 
       let c1 = row.insertCell(0);
       let c2 = row.insertCell(1);
@@ -37,59 +45,44 @@ function addRows() {
       let c13 = row.insertCell(12);
       let c14 = row.insertCell(13);
 
-      c1.innerHTML = "<td><input type='time' value='09:00'></td>";
-      c2.innerHTML = "<td><input type='time' value='18:00'></td>";
-      c3.innerHTML = "<td><input type='time' value='09:00'></td>";
-      c4.innerHTML = "<td><input type='time' value='18:00'></td>";
-      c5.innerHTML = "<td><input type='time' value='09:00'></td>";
-      c6.innerHTML = "<td><input type='time' value='18:00'></td>";
-      c7.innerHTML = "<td><input type='time' value='09:00'></td>";
-      c8.innerHTML = "<td><input type='time' value='18:00'></td>";
-      c9.innerHTML = "<td><input type='time' value='09:00'></td>";
-      c10.innerHTML = "<td><input type='time' value='18:00'></td>";
-      c11.innerHTML = "<td><input type='time' value='09:00'></td>";
-      c12.innerHTML = "<td><input type='time' value='18:00'></td>";
-      c13.innerHTML = "<td><input type='time' value='09:00'></td>";
-      c14.innerHTML = "<td><input type='time' value='18:00'></td>";
+      
+      c1.innerHTML = `<td><input type='time' value='09:00' id='input${cellNumber}'></td>`;
+      cellNumber++;
+      c2.innerHTML = `<td><input type='time' value='18:00' id='input${cellNumber}'></td>`;
+      cellNumber++;
+      c3.innerHTML = `<td><input type='time' value='18:00' id='input${cellNumber}'></td>`;
+      cellNumber++;
+      c4.innerHTML = `<td><input type='time' value='18:00' id='input${cellNumber}'></td>`;
+      cellNumber++;
+      c5.innerHTML = `<td><input type='time' value='09:00' id='input${cellNumber}'></td>`;
+      cellNumber++;
+      c6.innerHTML = `<td><input type='time' value='18:00' id='input${cellNumber}'></td>`;
+      cellNumber++;
+      c7.innerHTML = `<td><input type='time' value='09:00' id='input${cellNumber}'></td>`;
+      cellNumber++;
+      c8.innerHTML = `<td><input type='time' value='18:00' id='input${cellNumber}'></td>`;
+      cellNumber++;
+      c9.innerHTML = `<td><input type='time' value='09:00' id='input${cellNumber}'></td>`;
+      cellNumber++;
+      c10.innerHTML = `<td><input type='time' value='18:00' id='input${cellNumber}'></td>`;
+      cellNumber++;
+      c11.innerHTML = `<td><input type='time' value='09:00' id='input${cellNumber}'></td>`;
+      cellNumber++;
+      c12.innerHTML = `<td><input type='time' value='18:00' id='input${cellNumber}'></td>`;
+      cellNumber++;
+      c13.innerHTML = `<td><input type='time' value='09:00' id='input${cellNumber}'></td>`;
+      cellNumber++;
+      c14.innerHTML = `<td><input type='time' value='18:00' id='input${cellNumber}'></td>`;
+      cellNumber++;
 
-      c1.id = "cell1";
-      c2.id = "cell2";
-      c3.id = "cell3";
-      c4.id = "cell4";
-      c5.id = "cell5";
-      c6.id = "cell6";
-      c7.id = "cell7";
-      c8.id = "cell8";
-      c9.id = "cell9";
-      c10.id = "cell10";
-      c11.id = "cell11";
-      c12.id = "cell12";
-      c13.id = "cell13";
-      c14.id = "cell14";
+      //c1.id = "cell1";
 
-      c1.innerText = "09:00";
-      c2.innerText = "18:00";
-      c3.innerText = "09:00";
-      c4.innerText = "18:00";
-      c5.innerText = "09:00";
-      c6.innerText = "18:00";
-      c7.innerText = "09:00";
-      c8.innerText = "18:00";
-      c9.innerText = "09:00";
-      c10.innerText = "18:00";
-      c11.innerText = "09:00";
-      c12.innerText = "18:00";
-      c13.innerText = "09:00";
-      c14.innerText = "18:00";
+      //c1.innerText = "09:00";
 
     }
 
-    //populateShiftCalcTable();
-
   }
 }
-
-//populateShiftCalcTable();
 
 function populateShiftCalcTable() {
 
@@ -158,11 +151,19 @@ function populateShiftCalcTable() {
 
 function calcShiftLength() {
 
-  let shiftStartTime = document.getElementById("cell1");
-  let shiftEndTime = document.getElementById("cell2");
+  let shiftStartTime = document.getElementById("input1");
+  let shiftEndTime = document.getElementById("input2");
+  let shiftEndTime14 = document.getElementById("input14");
 
-  let timeArray1 = shiftStartTime.innerText.split(":");
-  let timeArray2 = shiftEndTime.innerText.split(":");
+  alert(shiftStartTime.id);
+  alert(shiftStartTime.value);
+
+  alert(shiftEndTime14.id);
+  alert(shiftEndTime14.value);
+
+
+  let timeArray1 = shiftStartTime.value.split(":");
+  let timeArray2 = shiftEndTime.value.split(":");
 
   let startMinutes = (parseInt(timeArray1[0], 10) * 60) + (parseInt(timeArray1[1], 10));
   let endMinutes = (parseInt(timeArray2[0], 10) * 60) + (parseInt(timeArray2[1], 10));
