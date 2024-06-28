@@ -47,7 +47,7 @@ function addRows() {
       cellNumber++;
       c2.innerHTML = `<td><input type='time' value='18:00' id='input${cellNumber}'></td>`;
       cellNumber++;
-      c3.innerHTML = `<td><input type='time' value='18:00' id='input${cellNumber}'></td>`;
+      c3.innerHTML = `<td><input type='time' value='09:00' id='input${cellNumber}'></td>`;
       cellNumber++;
       c4.innerHTML = `<td><input type='time' value='18:00' id='input${cellNumber}'></td>`;
       cellNumber++;
@@ -142,25 +142,32 @@ function populateShiftCalcTable() {
 
 function calcShiftLength() {
 
-  //let numberOfCells = addRows();
+  let myTable = document.getElementById("input-table");
 
-  let shiftStartTime = document.getElementById("input1");
-  let shiftEndTime = document.getElementById("input2");
+  // Get the number of shift cells in the table
+  let shiftsInTable = ((myTable.rows.length) - 2) * 14;
 
-  let timeArray1 = shiftStartTime.value.split(":");
-  let timeArray2 = shiftEndTime.value.split(":");
+  for (let cellNumber = 1; cellNumber < shiftsInTable;) {
 
-  let startMinutes = (parseInt(timeArray1[0], 10) * 60) + (parseInt(timeArray1[1], 10));
-  let endMinutes = (parseInt(timeArray2[0], 10) * 60) + (parseInt(timeArray2[1], 10));
+    let shiftStartTime = document.getElementById(`input${cellNumber}`);
+    cellNumber++;
+    let shiftEndTime = document.getElementById(`input${cellNumber}`);
+    cellNumber++;
 
-  let shiftLength = (endMinutes - startMinutes) / 60;
+    let timeArray1 = shiftStartTime.value.split(":");
+    let timeArray2 = shiftEndTime.value.split(":");
 
-  shiftLength = shiftLength.toFixed(2);
-  if (shiftLength < 0) {
-    alert("Shift end time needs to be after shift start time");
-  } else {
-    alert(shiftLength);
+    let startMinutes = (parseInt(timeArray1[0], 10) * 60) + (parseInt(timeArray1[1], 10));
+    let endMinutes = (parseInt(timeArray2[0], 10) * 60) + (parseInt(timeArray2[1], 10));
 
-    //return shiftLength;
+    let shiftLength = (endMinutes - startMinutes) / 60;
+
+    shiftLength = shiftLength.toFixed(2);
+    if (shiftLength < 0) {
+      alert("Shift end time needs to be after shift start time");
+    } else {
+      alert(shiftLength);
+
+    }
   }
 }
