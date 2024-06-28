@@ -6,9 +6,6 @@ rosterLength.addEventListener("click", addRows);
 let calcShift = document.getElementById("calculate-shift");
 calcShift.addEventListener("click", calcShiftLength);
 
-
-
-
 function addRows() {
   let noOfWeeks = document.getElementById("weeks").value;
   let inputTable = document.getElementById("input-table");
@@ -24,11 +21,11 @@ function addRows() {
       inputTable.deleteRow(i);
     }
 
+    let cellNumber = 0;
+
     for (let i = 0; i < noOfWeeks; i++) {
 
       let row = inputTable.insertRow(-1);
-
-      let cellNumber = 1;
 
       let c1 = row.insertCell(0);
       let c2 = row.insertCell(1);
@@ -45,7 +42,7 @@ function addRows() {
       let c13 = row.insertCell(12);
       let c14 = row.insertCell(13);
 
-      
+      cellNumber++;
       c1.innerHTML = `<td><input type='time' value='09:00' id='input${cellNumber}'></td>`;
       cellNumber++;
       c2.innerHTML = `<td><input type='time' value='18:00' id='input${cellNumber}'></td>`;
@@ -73,12 +70,6 @@ function addRows() {
       c13.innerHTML = `<td><input type='time' value='09:00' id='input${cellNumber}'></td>`;
       cellNumber++;
       c14.innerHTML = `<td><input type='time' value='18:00' id='input${cellNumber}'></td>`;
-      cellNumber++;
-
-      //c1.id = "cell1";
-
-      //c1.innerText = "09:00";
-
     }
 
   }
@@ -151,16 +142,10 @@ function populateShiftCalcTable() {
 
 function calcShiftLength() {
 
+  //let numberOfCells = addRows();
+
   let shiftStartTime = document.getElementById("input1");
   let shiftEndTime = document.getElementById("input2");
-  let shiftEndTime14 = document.getElementById("input14");
-
-  alert(shiftStartTime.id);
-  alert(shiftStartTime.value);
-
-  alert(shiftEndTime14.id);
-  alert(shiftEndTime14.value);
-
 
   let timeArray1 = shiftStartTime.value.split(":");
   let timeArray2 = shiftEndTime.value.split(":");
@@ -176,6 +161,6 @@ function calcShiftLength() {
   } else {
     alert(shiftLength);
 
-    return shiftLength;
+    //return shiftLength;
   }
 }
