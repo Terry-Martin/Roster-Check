@@ -85,11 +85,13 @@ function populateShiftLengthTable() {
   let noOfWeeks = document.getElementById("weeks").value;
   let displayTable = document.getElementById("display-shift-length-table");
 
-  for (let i = 2; i < displayTable.rows.length;) {
+  for (let i = 1; i < displayTable.rows.length;) {
     displayTable.deleteRow(i);
   }
 
   let cellNumber = 0;
+  // Allow for calculation of each weeks total worked hours
+  let weeklyTotal = 0;
 
   for (let i = 0; i < noOfWeeks; i++) {
 
@@ -102,6 +104,7 @@ function populateShiftLengthTable() {
     let c5 = row.insertCell(4);
     let c6 = row.insertCell(5);
     let c7 = row.insertCell(6);
+    let c8 = row.insertCell(7);
 
     cellNumber++;
     c1.innerHTML = `<td><input type='text' id='display${cellNumber}' readonly></td>`;
@@ -117,6 +120,9 @@ function populateShiftLengthTable() {
     c6.innerHTML = `<td><input type='text' id='display${cellNumber}' readonly></td>`;
     cellNumber++;
     c7.innerHTML = `<td><input type='text' id='display${cellNumber}' readonly></td>`;
+    weeklyTotal++;
+    // weekly total
+    c8.innerHTML = `<td><input type='text' id='display${weeklyTotal}' readonly></td>`;
 
   }
 }
@@ -128,6 +134,9 @@ function calcShiftLength() {
   // Get the number of shift cells in the table
   let shiftsInTable = ((inputTable.rows.length) - 2) * 14;
   let displayTableCells = 1;
+
+  let calcWeeklyTotal = 0;
+  let displayWeeklyTotal = 1;
 
   for (let cellNumber = 1; cellNumber < shiftsInTable;) {
 
@@ -145,9 +154,16 @@ function calcShiftLength() {
     let shiftLength = (endMinutes - startMinutes) / 60;
 
     shiftLength = shiftLength.toFixed(2);
- 
+
     document.getElementById(`display${displayTableCells}`).value = shiftLength;
+    
+
+    calcWeeklyTotal = parseInt(document.getElementById(`display${displayTableCells}`).value) + parseInt(shiftLength);
+    alert(calcWeeklyTotal);
+
     displayTableCells++;
+    //document.getElementById(`weeklyTotaldisplay${displayWeeklyTotal}`).value = 55;
 
   }
+  displayWeeklyTotal++;
 }
