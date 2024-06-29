@@ -122,10 +122,18 @@ function populateShiftLengthTable() {
     c7.innerHTML = `<td><input type='text' id='display${cellNumber}' readonly></td>`;
     weeklyTotal++;
     // weekly total
-    c8.innerHTML = `<td><input type='text' id='display${weeklyTotal}' readonly></td>`;
+    c8.innerHTML = `<td><input type='text' id='display-weekly${weeklyTotal}' readonly></td>`;
 
   }
+
+
 }
+
+
+
+
+
+
 
 function calcShiftLength() {
 
@@ -134,9 +142,7 @@ function calcShiftLength() {
   // Get the number of shift cells in the table
   let shiftsInTable = ((inputTable.rows.length) - 2) * 14;
   let displayTableCells = 1;
-
-  let calcWeeklyTotal = 0;
-  let displayWeeklyTotal = 1;
+  let averageWeeklyHours = 0;
 
   for (let cellNumber = 1; cellNumber < shiftsInTable;) {
 
@@ -144,26 +150,21 @@ function calcShiftLength() {
     cellNumber++;
     let shiftEndTime = document.getElementById(`input${cellNumber}`);
     cellNumber++;
-
     let timeArray1 = shiftStartTime.value.split(":");
     let timeArray2 = shiftEndTime.value.split(":");
-
     let startMinutes = (parseInt(timeArray1[0], 10) * 60) + (parseInt(timeArray1[1], 10));
     let endMinutes = (parseInt(timeArray2[0], 10) * 60) + (parseInt(timeArray2[1], 10));
-
     let shiftLength = (endMinutes - startMinutes) / 60;
-
     shiftLength = shiftLength.toFixed(2);
 
     document.getElementById(`display${displayTableCells}`).value = shiftLength;
-    
-
-    calcWeeklyTotal = parseInt(document.getElementById(`display${displayTableCells}`).value) + parseInt(shiftLength);
-    alert(calcWeeklyTotal);
-
     displayTableCells++;
-    //document.getElementById(`weeklyTotaldisplay${displayWeeklyTotal}`).value = 55;
 
+    
+    averageWeeklyHours = averageWeeklyHours + parseFloat(shiftLength);
+
+
+    document.getElementById("average-weekly-hours").value = averageWeeklyHours / ((inputTable.rows.length) - 2);
+
+    }
   }
-  displayWeeklyTotal++;
-}
