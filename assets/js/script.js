@@ -126,14 +126,7 @@ function populateShiftLengthTable() {
 
   }
 
-
 }
-
-
-
-
-
-
 
 function calcShiftLength() {
 
@@ -154,7 +147,28 @@ function calcShiftLength() {
     let timeArray2 = shiftEndTime.value.split(":");
     let startMinutes = (parseInt(timeArray1[0], 10) * 60) + (parseInt(timeArray1[1], 10));
     let endMinutes = (parseInt(timeArray2[0], 10) * 60) + (parseInt(timeArray2[1], 10));
-    let shiftLength = (endMinutes - startMinutes) / 60;
+
+    let breakUnpaid = document.getElementById("unpaid");
+    let breakLength = 0;
+
+    let shiftLength = (endMinutes - startMinutes); // / 60;
+
+    if (breakUnpaid.checked == true) {
+
+      if (shiftLength >= 480) {
+        breakLength = 60;
+      } else if (shiftLength >= 240) {
+        breakLength = 30;
+      } else {
+        breakLength = 0;
+      }
+
+      shiftLength = ((endMinutes - startMinutes) - breakLength) / 60;
+    } else {
+
+      shiftLength = shiftLength / 60;
+    }
+
     shiftLength = shiftLength.toFixed(2);
 
     document.getElementById(`display${displayTableCells}`).value = shiftLength;
@@ -166,5 +180,5 @@ function calcShiftLength() {
 
     document.getElementById("average-weekly-hours").value = twoDecimimal.toFixed(2);
 
-    }
   }
+}

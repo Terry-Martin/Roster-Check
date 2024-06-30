@@ -16,14 +16,14 @@
             <input type="number" name="weeks" id="weeks" min="1" max="24" value="1">
         </span>
         <span>
-            <label for="break">Length of Break</label>
-            <input type="number" name="break" id="break" value="60">
+            <label for="break-length">Length of Break</label>
+            <input type="number" name="break-length" id="break-length" value="0">
         </span>
         <span>
-            <label for="break">Paid Break</label>
-            <input type="radio" name="break" id="paid-break" value="Paid" checked>
             <label for="break">Unpaid Break</label>
-            <input type="radio" name="break" id="Unpaid" value = "Unpaid">
+            <input type="radio" name="break" id="unpaid" value = "Unpaid" checked>
+            <label for="break">Paid Break</label>
+            <input type="radio" name="break" id="paid-break" value="Paid">
         </span>
     </div>
 
@@ -93,9 +93,9 @@
     </div>
 
     <div>
+        <label for="average-weekly-hours">Average Weekly Hours</label>
         <input type="text" id="average-weekly-hours">
     </div>
-
 
     <script src="assets/js/script.js"></script>
 </body>
