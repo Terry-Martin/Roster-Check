@@ -46,11 +46,11 @@ function addRows() {
       cellNumber++;
       c1.innerHTML = `<td><input type='time' value='00:00' id='input${cellNumber}'></td>`;
       cellNumber++;
-      c2.innerHTML = `<td><input type='time' value='01:00' id='input${cellNumber}'></td>`;
+      c2.innerHTML = `<td><input type='time' value='00:00' id='input${cellNumber}'></td>`;
       cellNumber++;
       c3.innerHTML = `<td><input type='time' value='09:00' id='input${cellNumber}'></td>`;
       cellNumber++;
-      c4.innerHTML = `<td><input type='time' value='11:00' id='input${cellNumber}'></td>`;
+      c4.innerHTML = `<td><input type='time' value='18:00' id='input${cellNumber}'></td>`;
       cellNumber++;
       c5.innerHTML = `<td><input type='time' value='09:00' id='input${cellNumber}'></td>`;
       cellNumber++;
