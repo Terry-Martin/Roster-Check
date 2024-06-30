@@ -160,11 +160,11 @@ function calcShiftLength() {
     document.getElementById(`display${displayTableCells}`).value = shiftLength;
     displayTableCells++;
 
-    
     averageWeeklyHours = averageWeeklyHours + parseFloat(shiftLength);
 
+    let twoDecimimal = averageWeeklyHours / ((inputTable.rows.length) - 2);
 
-    document.getElementById("average-weekly-hours").value = averageWeeklyHours / ((inputTable.rows.length) - 2);
+    document.getElementById("average-weekly-hours").value = twoDecimimal.toFixed(2);
 
     }
   }
