@@ -1,11 +1,18 @@
-addRows();
-//populateShiftLengthTable();
 
-let rosterLength = document.getElementById("calculate-roster");
-rosterLength.addEventListener("click", addRows, populateShiftLengthTable);
+
+//let rosterLength = document.getElementById("calculate-roster");
+//rosterLength.addEventListener("click", addRows, populateShiftLengthTable, calcShiftLength);
+
+let rosterLength = document.getElementById("weeks");
+rosterLength.addEventListener("change", addRows, populateShiftLengthTable);
 
 let calcShift = document.getElementById("calculate-shift");
+
 calcShift.addEventListener("click", calcShiftLength);
+
+
+addRows();
+calcShiftLength();
 
 function addRows() {
   let noOfWeeks = document.getElementById("weeks").value;
@@ -73,6 +80,7 @@ function addRows() {
       c14.innerHTML = `<td><input type='time' value='00:00' id='input${cellNumber}'></td>`;
     }
     populateShiftLengthTable();
+
   }
 }
 
@@ -121,14 +129,13 @@ function populateShiftLengthTable() {
     cellNumber++;
     c7.innerHTML = `<td><input type='text' id='display${cellNumber}' readonly></td>`;
     weeklyTotal++;
-    // weekly total
-    c8.innerHTML = `<td><input type='text' id='display-weekly${weeklyTotal}' readonly></td>`;
 
   }
 
 }
 
 function calcShiftLength() {
+
 
   let inputTable = document.getElementById("input-table");
 
