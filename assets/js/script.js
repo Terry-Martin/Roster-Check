@@ -52,7 +52,7 @@ document.getElementById("average-weekly-hours").value = 0;
       let c14 = row.insertCell(13);
 
       cellNumber++;
-      c1.innerHTML = `<td><input type='time' value='00:00' id='input${cellNumber}'></td>`;
+      c1.innerHTML = `<td><input type='time' value='00:00' display = 'none' id='input${cellNumber}'></td>`;
       cellNumber++;
       c2.innerHTML = `<td><input type='time' value='00:00' id='input${cellNumber}'></td>`;
       cellNumber++;

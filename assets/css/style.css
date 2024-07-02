@@ -49,3 +49,31 @@ table tbody tr {
 table tbody tr:nth-child(odd) {
 	background-color: #ffffff;
 } 
+
+
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    background: none;
+    display:none;
+}
+
+@media screen and (min-width: 320px) {
+    body {
+      background-color: lightgreen;
+    }
+  }
+  @media screen and (min-width: 480px) {
+    body {
+      background-color: rgb(238, 144, 200);
+    }
+  }
+  @media screen and (min-width: 768px) {
+    body {
+      background-color: rgb(144, 224, 238);
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    body {
+      background-color: rgb(229, 238, 144);
+    }
+  }
