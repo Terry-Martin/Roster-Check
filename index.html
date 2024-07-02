@@ -4,21 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Document</title>
+    <link rel='shortcut icon' type='image/x-icon' href='assets/images/calendar_icon.jpg' />
+    <title>Roster Calculator</title>
 </head>
 
 <body>
+
+    <h1 class="heading">
+        <img class="logo" src="assets/images/calendar_icon.jpg" alt="logo">Roster Calculator
+    </h1>
 
     <div>
         <span>
             <label for="weeks">Number of week in Rotation:</label>
             <input type="number" name="weeks" id="weeks" min="1" max="24" value="1">
         </span>
- 
+
         <span>
             <label for="break">Unpaid Break</label>
-            <input type="radio" name="break" id="unpaid" value = "Unpaid" checked>
+            <input type="radio" name="break" id="unpaid" value="Unpaid" checked>
             <label for="break">Paid Break</label>
             <input type="radio" name="break" id="paid-break" value="Paid">
         </span>
@@ -64,12 +72,6 @@
     <br>
 
     <div>
-        <button id="calculate-roster">Display</button>
-    </div>
-
-    <br>
-
-    <div>
         <table id="display-shift-length-table">
             <tr>
                 <th>Sunday</th>
@@ -85,7 +87,7 @@
     </div>
 
     <div>
-        <button id="calculate-shift">Calculate Shift</button>
+        <button id="calculate-shift">Calculate Roster Hours</button>
     </div>
 
     <div>

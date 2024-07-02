@@ -7,14 +7,15 @@ let rosterLength = document.getElementById("weeks");
 rosterLength.addEventListener("change", addRows, populateShiftLengthTable);
 
 let calcShift = document.getElementById("calculate-shift");
-
 calcShift.addEventListener("click", calcShiftLength);
-
 
 addRows();
 calcShiftLength();
 
 function addRows() {
+
+document.getElementById("average-weekly-hours").value = 0;
+
   let noOfWeeks = document.getElementById("weeks").value;
   let inputTable = document.getElementById("input-table");
 
