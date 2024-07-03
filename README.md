@@ -1,10 +1,12 @@
-# Love Maths
+# Roster Calculator
 
-In this section, you will include one or two paragraphs providing an overview of your project. Essentially, this part is your sales pitch. At this stage, you should have a name for your project so use it! Don’t introduce the project as a Portfolio project for the diploma. In this section, describe what the project hopes to accomplish, who it is intended to target and how it will be useful to the target audience. 
+The purposes of this website is to provide a roster calculator for medium to large size companies. The user will select the number of weeks and the table wil display prompting a start time and end end time for each day. The calculator is geared towards a paid hours calculation, so if the user selects unpaid breaks, these hours will be removed. 
 
-For example, Love Maths is a site that hopes to demonstrate how pure JavaScript works in a real-world context. The site will be targeted toward people who not only love to implement more advanced JavaScript concepts but also maths. Love Maths is a fully responsive JavaScript maths game that will allow users to add, subtract, multiply and divide numbers. 
+With large scale companies, it is common to have mutiple rosters to cover all their internal teams and roles. These can be beome quite complex when tryng to match hours against changing busy periods or seasonal trends.
 
-![Responsice Mockup](media/love_maths_mockup.png)
+One of the mian considerations when creating a roster is to ensure the hours in the roster matches the employee contracted hours ob avger over the length of the roster (1 week or muttiple weeks). This calculator shows the use the average hours and they can then edit the times, if eeded, to bring the average to the 40 hours (or whatever contract the employee has)
+
+![Responsice Mockup](assets)
 
 ## Features 
 
@@ -17,6 +19,7 @@ In this section, you should go over the different parts of your project, and des
   - Featured at the top of the page, the Love Maths logo and heading is easy to see for the user. Upon viewing the page, the user will be able to see the name of the game.
 
 ![Logo](media/love_maths_logo.png)
+![Alt text](assets/images/questions.jpg?raw=true "Title")
 
 - __The Game Area__
 

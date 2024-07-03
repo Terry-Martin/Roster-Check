@@ -1,6 +1,4 @@
-/* Global style */
-/* Adapted from LoveMaths tutorial */
-
+/* Main body area */
 
 body {
   background-color: white;
@@ -9,19 +7,28 @@ body {
   text-align: center;
 }
 
+/* Heading area */
+
 .heading {
   text-align: center;
   font-size: 2.5rem;
 }
+
+/* Logo area */
 
 .logo {
   height: 50px;
   padding-right: 5px;
 }
 
+/* Question area for first 2 user inputs*/
+
 #questions-area {
   padding-top: 20px;
-  background-color: #dddfe1;
+  background-color: #DED0F7;
+  color: #332D09;
+  font-weight: bold;
+  font-size: 16px;
   width: 500px;
   margin: 0 auto;
   border-style: double;
@@ -30,6 +37,7 @@ body {
 
 #weeks-question {
   padding-top: 20px;
+  font: white;
 }
 
 #break-question {
@@ -37,45 +45,13 @@ body {
   padding-bottom: 25px;
 }
 
-
-/* https://codeshack.io/html-styling-tables-example/ 
-table {
-	border-collapse: collapse;
-    font-family: Tahoma, Geneva, sans-serif;
-}
-
-table td {
-	padding: 1px;
-}
-
-table thead td {
-	background-color: #54585d;
-	color: #ffffff;
-	font-weight: bold;
-	font-size: 13px;
-	border: 1px solid #54585d;
-}
-table tbody td {
-	color: #636363;
-	border: 1px solid #dddfe1;
-}
-table tbody tr {
-	background-color: #f9fafb;
-}
-table tbody tr:nth-child(odd) {
-	background-color: #ffffff;
-} */
-
-
-
+/* User input table */
 
 #table-area {
   padding-top: 30px;
 }
 
-
-/* https://jsfiddle.net/zinoui/dB93J */
- #input-table {
+#input-table {
   border: solid 3px;
   border-collapse: collapse;
   border-spacing: 1px;
@@ -102,8 +78,29 @@ table tbody tr:nth-child(odd) {
 
 }
 
+/* User display table */
 
+#display-table {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 
+#display-shift-length-table {
+  border: solid 3px;
+  border-collapse: collapse;
+  border-spacing: 1px;
+  font: normal 13px Arial, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+}
+
+#display-shift-length-table th {
+  padding: 1px;
+  background-color: #FDDB1E;
+  color: #5817C7;
+  font-size: 16px;
+}
 
 
 /* Input box */
@@ -120,6 +117,34 @@ input[type=time] {
   border: none;
   outline: none;
 }
+
+/* Button */
+
+/* https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_hover */
+#calculate-shift {
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: #DED0F7;
+  color: #332D09;
+  border: 2px solid #FDDB1E;
+}
+
+#calculate-shift:hover {
+  background-color: #332D09;
+  color: #DED0F7;
+}
+
+#average-area {
+  padding-top: 25px;
+}
+
+/* Media queries */
 
 @media screen and (max-width: 320px) {
   input[type="time"]::-webkit-calendar-picker-indicator {
@@ -142,4 +167,6 @@ input[type=time] {
   }
 }
 
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+  
+}

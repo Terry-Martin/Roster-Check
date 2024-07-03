@@ -1,24 +1,32 @@
-
-
-//let rosterLength = document.getElementById("calculate-roster");
-//rosterLength.addEventListener("click", addRows, populateShiftLengthTable, calcShiftLength);
-
+// Number of weeks is set from dropdown list. This triggers the functions each time the value of dropdown is changed
 let rosterLength = document.getElementById("weeks");
 rosterLength.addEventListener("change", addRows, populateShiftLengthTable);
 
+// Call function when button is clicked
 let calcShift = document.getElementById("calculate-shift");
 calcShift.addEventListener("click", calcShiftLength);
 
+// Call functions
 addRows();
 calcShiftLength();
 
+
+/**
+ * Add rows to exsisting table depnding on user selection. An input type of Date 
+ * created for each cell. Default values will show and a dynamically created id 
+ * will be created. It will then call the populateShiftLengthTable() method
+ */
 function addRows() {
 
-document.getElementById("average-weekly-hours").value = 0;
+  // Set default value
+  document.getElementById("average-weekly-hours").value = 0;
 
+  // Create variales to check length of roster
   let noOfWeeks = document.getElementById("weeks").value;
   let inputTable = document.getElementById("input-table");
 
+
+  // Ensure a number less than 1 is not entered in dropdown
   if (noOfWeeks < 1) {
     alert("Rotation needs to be a minimum of 1 week")
     document.getElementById("weeks").value = 1;
@@ -26,6 +34,7 @@ document.getElementById("average-weekly-hours").value = 0;
 
   } else {
 
+    //Add or delete rows to existing table
     for (let i = 2; i < inputTable.rows.length;) {
       inputTable.deleteRow(i);
     }
@@ -51,6 +60,7 @@ document.getElementById("average-weekly-hours").value = 0;
       let c13 = row.insertCell(12);
       let c14 = row.insertCell(13);
 
+      // Add input ype time to each cell as rows are created. ID created to ensure its unique
       cellNumber++;
       c1.innerHTML = `<td><input type='time' value='00:00' id='input${cellNumber}'></td>`;
       cellNumber++;
@@ -80,17 +90,23 @@ document.getElementById("average-weekly-hours").value = 0;
       cellNumber++;
       c14.innerHTML = `<td><input type='time' value='00:00' id='input${cellNumber}'></td>`;
     }
+
+    // Call Funcion
     populateShiftLengthTable();
 
   }
 }
 
+
+/**
+ * Add rows and readonly cells for display table
+ */
 function populateShiftLengthTable() {
 
   // Add ID to dynamicaally created cells
   // https://stackoverflow.com/questions/23003341/add-id-dynamically-to-each-table-cells
 
-
+  // Create variales to check length of roster
   let noOfWeeks = document.getElementById("weeks").value;
   let displayTable = document.getElementById("display-shift-length-table");
 
@@ -113,7 +129,6 @@ function populateShiftLengthTable() {
     let c5 = row.insertCell(4);
     let c6 = row.insertCell(5);
     let c7 = row.insertCell(6);
-    let c8 = row.insertCell(7);
 
     cellNumber++;
     c1.innerHTML = `<td><input type='text' id='display${cellNumber}' readonly></td>`;
@@ -130,13 +145,18 @@ function populateShiftLengthTable() {
     cellNumber++;
     c7.innerHTML = `<td><input type='text' id='display${cellNumber}' readonly></td>`;
     weeklyTotal++;
-
   }
 
 }
 
+/**
+ * Calculates the shift length for each day. Depend on egenth of shift, 
+ * unpaid lunch time will be removed for that shift length. Dails shift 
+ * length is summed up to weekly hours. Average weekly hours is then 
+ * calcaulated depending on the number of weeks in rotation. Ths figure is displayed to the user,
+ * 
+ */
 function calcShiftLength() {
-
 
   let inputTable = document.getElementById("input-table");
 
@@ -147,20 +167,24 @@ function calcShiftLength() {
 
   for (let cellNumber = 1; cellNumber < shiftsInTable;) {
 
+    // Set variables for to Start and End times for each day. 
     let shiftStartTime = document.getElementById(`input${cellNumber}`);
     cellNumber++;
     let shiftEndTime = document.getElementById(`input${cellNumber}`);
     cellNumber++;
+    // Split the data using ":"
     let timeArray1 = shiftStartTime.value.split(":");
     let timeArray2 = shiftEndTime.value.split(":");
     let startMinutes = (parseInt(timeArray1[0], 10) * 60) + (parseInt(timeArray1[1], 10));
     let endMinutes = (parseInt(timeArray2[0], 10) * 60) + (parseInt(timeArray2[1], 10));
 
+    // If break updaid is selected by user, remove this from shift time (to arrive at paid hours)
     let breakUnpaid = document.getElementById("unpaid");
     let breakLength = 0;
 
-    let shiftLength = (endMinutes - startMinutes); // / 60;
+    let shiftLength = (endMinutes - startMinutes);
 
+    // Different shift lengths have different built in break times. Usually set against employment law or company policy and should be an editable numer in normal cases
     if (breakUnpaid.checked == true) {
 
       if (shiftLength >= 480) {
@@ -177,8 +201,10 @@ function calcShiftLength() {
       shiftLength = shiftLength / 60;
     }
 
+    // Reduce to 2 decimal points
     shiftLength = shiftLength.toFixed(2);
 
+    //Display daily shift length values
     document.getElementById(`display${displayTableCells}`).value = shiftLength;
     displayTableCells++;
 
@@ -186,7 +212,9 @@ function calcShiftLength() {
 
     let twoDecimimal = averageWeeklyHours / ((inputTable.rows.length) - 2);
 
+    // Display average weekly hours
     document.getElementById("average-weekly-hours").value = twoDecimimal.toFixed(2);
 
   }
+
 }

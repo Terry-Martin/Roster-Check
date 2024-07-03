@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Links to stylesheet, googlefonts, fontawesome and favicon -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
@@ -13,12 +14,13 @@
 </head>
 
 <body>
-
+    <!-- Heading and Logo-->
     <h1 class="heading">
         <img class="logo" src="assets/images/calendar_icon.jpg" alt="logo">Roster Calculator
         <img class="logo" src="assets/images/calendar_icon.jpg" alt="logo">
     </h1>
 
+    <!-- 2 questions for user to answer with defaults added -->
     <div id="questions-area">
         <div>
             <div id="weeks-question">
@@ -36,62 +38,68 @@
         </div>
     </div>
 
+    <!-- Input area for user in table form. Number of rows based on previous selection of weeks-->
     <div id="table-area">
         <table id="input-table">
             <tr>
-                <th colspan="2" class = "day-border">Sunday</th>
-                <th colspan="2" class = "day-border">Monday</th>
-                <th colspan="2" class = "day-border">Tuesday</th>
-                <th colspan="2" class = "day-border">Wednesday</th>
-                <th colspan="2" class = "day-border">Thursday</th>
-                <th colspan="2" class = "day-border">Friday</th>
+                <th colspan="2" class="day-border">Sunday</th>
+                <th colspan="2" class="day-border">Monday</th>
+                <th colspan="2" class="day-border">Tuesday</th>
+                <th colspan="2" class="day-border">Wednesday</th>
+                <th colspan="2" class="day-border">Thursday</th>
+                <th colspan="2" class="day-border">Friday</th>
                 <th colspan="2">Saturday</th>
             </tr>
             <tr>
                 <th>Start</th>
-                <th class = "day-border">End</th>
+                <th class="day-border">End</th>
                 <th>Start</th>
-                <th class = "day-border">End</th>
+                <th class="day-border">End</th>
                 <th>Start</th>
-                <th class = "day-border">End</th>
+                <th class="day-border">End</th>
                 <th>Start</th>
-                <th class = "day-border">End</th>
+                <th class="day-border">End</th>
                 <th>Start</th>
-                <th class = "day-border">End</th>
+                <th class="day-border">End</th>
                 <th>Start</th>
-                <th class = "day-border">End</th>
+                <th class="day-border">End</th>
                 <th>Start</th>
-                <th class = "day-border">End</th>
+                <th class="day-border">End</th>
             </tr>
         </table>
     </div>
 
     <br>
 
-    <div>
+
+    <!-- Display the daily roster length in decimal form -->
+    <div id="display-table">
         <table id="display-shift-length-table">
             <tr>
-                <th>Sunday</th>
-                <th>Monday</th>
-                <th>Tuesday</th>
-                <th>Wednesday</th>
-                <th>Thursday</th>
-                <th>Friday</th>
-                <th>Saturday</th>
+                <th class="day-border">Sunday</th>
+                <th class="day-border">Monday</th>
+                <th class="day-border">Tuesday</th>
+                <th class="day-border">Wednesday</th>
+                <th class="day-border">Thursday</th>
+                <th class="day-border">Friday</th>
+                <th class="day-border">Saturday</th>
             </tr>
 
         </table>
     </div>
 
+    <!-- Button to calculate roster lengths and average weekly hours -->
     <div>
         <button id="calculate-shift">Calculate Roster Hours</button>
     </div>
 
-    <div>
+    <!-- Display average weekly hours -->
+    <div id="average-area">
         <label for="average-weekly-hours">Average Weekly Hours</label>
         <input type="text" id="average-weekly-hours" readonly>
     </div>
 
+    <!-- Link for JaveScript-->
     <script src="assets/js/script.js"></script>
 </body>
 
