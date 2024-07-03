@@ -28,7 +28,7 @@ function addRows() {
 
   // Ensure a number less than 1 is not entered in dropdown
   if (noOfWeeks < 1) {
-    alert("Rotation needs to be a minimum of 1 week")
+    alert("Rotation needs to be a minimum of 1 week");
     document.getElementById("weeks").value = 1;
     addRows();
 

@@ -64,10 +64,10 @@ If this section grows too long, you may want to split it off into a separate fil
 - JavaScript
     - No errors were found when passing through the official [Jshint validator](https://jshint.com/)
       - The following metrics were returned: 
-      - There are 11 functions in this file.
-      - Function with the largest signature takes 2 arguments, while the median is 0.
-      - Largest function has 10 statements in it, while the median is 3.
-      - The most complex function has a cyclomatic complexity value of 4 while the median is 2.
+      - Function with the largest signature take 0 arguments, while the median is 0.
+      - Largest function has 55 statements in it, while the median is 30.
+      - The most complex function has a cyclomatic complexity value of 5 while the median is 4.
+
 
 ### Unfixed Bugs
 
