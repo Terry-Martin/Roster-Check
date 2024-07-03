@@ -3,26 +3,42 @@
 
 
 body {
-    background-color: white;
-    font-family: "Raleway", sans-serif;
-    color: #445361;
-    text-align: center;
+  background-color: white;
+  font-family: "Raleway", sans-serif;
+  color: #445361;
+  text-align: center;
 }
 
 .heading {
-    text-align: center;
-    font-size: 2.5rem;
+  text-align: center;
+  font-size: 2.5rem;
 }
 
 .logo {
-    height: 50px;
-    padding-right: 5px;
+  height: 50px;
+  padding-right: 5px;
+}
+
+#questions-area {
+  padding-top: 20px;
+  background-color: #dddfe1;
+  width: 500px;
+  margin: 0 auto;
+  border-style: double;
 }
 
 
+#weeks-question {
+  padding-top: 20px;
+}
+
+#break-question {
+  padding-top: 10px;
+  padding-bottom: 25px;
+}
 
 
-/* https://codeshack.io/html-styling-tables-example/ */
+/* https://codeshack.io/html-styling-tables-example/ 
 table {
 	border-collapse: collapse;
     font-family: Tahoma, Geneva, sans-serif;
@@ -48,32 +64,82 @@ table tbody tr {
 }
 table tbody tr:nth-child(odd) {
 	background-color: #ffffff;
-} 
+} */
 
 
 
-input[type="time"]::-webkit-calendar-picker-indicator {
-    background: none;
-    display:none;
+
+#table-area {
+  padding-top: 30px;
 }
 
-@media screen and (min-width: 320px) {
-    body {
-      background-color: lightgreen;
-    }
+
+/* https://jsfiddle.net/zinoui/dB93J */
+ #input-table {
+  border: solid 3px;
+  border-collapse: collapse;
+  border-spacing: 1px;
+  font: normal 13px Arial, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#input-table th {
+  padding: 1px;
+  background-color: #FDDB1E;
+  color: #5817C7;
+  font-size: 16px;
+}
+
+.day-border {
+  border-right: solid 2px;
+}
+
+#input-table tbody td {
+  border: solid 1px #DDEEEE;
+  color: #333;
+  padding: 1px;
+
+}
+
+
+
+
+
+/* Input box */
+input[type=text] {
+  transition: width 0.4s ease-in-out;
+
+}
+
+input[type=time] {
+  width: 100%;
+  padding: 1px 1px;
+  margin: 4px 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+}
+
+@media screen and (max-width: 320px) {
+  input[type="time"]::-webkit-calendar-picker-indicator {
+    background: none;
+    display: none;
   }
-  @media screen and (min-width: 480px) {
-    body {
-      background-color: rgb(238, 144, 200);
-    }
+}
+
+@media screen and (max-width: 480px) {
+  input[type="time"]::-webkit-calendar-picker-indicator {
+    background: none;
+    display: none;
   }
-  @media screen and (min-width: 768px) {
-    body {
-      background-color: rgb(144, 224, 238);
-    }
+}
+
+@media screen and (max-width: 768px) {
+  input[type="time"]::-webkit-calendar-picker-indicator {
+    background: none;
+    display: none;
   }
-  @media screen and (min-width: 1024px) {
-    body {
-      background-color: rgb(229, 238, 144);
-    }
-  }
+}
+
+@media screen and (max-width: 1024px) {}

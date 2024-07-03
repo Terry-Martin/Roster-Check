@@ -19,53 +19,49 @@
         <img class="logo" src="assets/images/calendar_icon.jpg" alt="logo">
     </h1>
 
-    <div>
+    <div id="questions-area">
         <div>
-            <label for="weeks">How many weeks in rotation?</label>
-            <input type="number" name="weeks" id="weeks" min="1" max="24" value="1">
-        </div>
-        <div>
-            <p>Please select break type:</p>
-            <label for="break">Unpaid Break</label>
-            <input type="radio" name="break" id="unpaid" value="Unpaid" checked>
-            <label for="break">Paid Break</label>
-            <input type="radio" name="break" id="paid-break" value="Paid">
+            <div id="weeks-question">
+                <label for="weeks">How many weeks in rotation?</label>
+                <input type="number" name="weeks" id="weeks" min="1" max="24" value="1">
+            </div>
+            <div id="break-question">
+                <p>Please select break type:
+                    <label for="break">Unpaid Break</label>
+                    <input type="radio" name="break" id="unpaid" value="Unpaid" checked>
+                    <label for="break">Paid Break</label>
+                    <input type="radio" name="break" id="paid-break" value="Paid">
+                </p>
+            </div>
         </div>
     </div>
 
-    <div>
+    <div id="table-area">
         <table id="input-table">
             <tr>
-                <th>Sunday</th>
-                <th></th>
-                <th>Monday</th>
-                <th></th>
-                <th>Tuesday</th>
-                <th></th>
-                <th>Wednesday</th>
-                <th></th>
-                <th>Thursday</th>
-                <th></th>
-                <th>Friday</th>
-                <th></th>
-                <th>Saturday</th>
-                <th></th>
+                <th colspan="2" class = "day-border">Sunday</th>
+                <th colspan="2" class = "day-border">Monday</th>
+                <th colspan="2" class = "day-border">Tuesday</th>
+                <th colspan="2" class = "day-border">Wednesday</th>
+                <th colspan="2" class = "day-border">Thursday</th>
+                <th colspan="2" class = "day-border">Friday</th>
+                <th colspan="2">Saturday</th>
             </tr>
             <tr>
                 <th>Start</th>
-                <th>End</th>
+                <th class = "day-border">End</th>
                 <th>Start</th>
-                <th>End</th>
+                <th class = "day-border">End</th>
                 <th>Start</th>
-                <th>End</th>
+                <th class = "day-border">End</th>
                 <th>Start</th>
-                <th>End</th>
+                <th class = "day-border">End</th>
                 <th>Start</th>
-                <th>End</th>
+                <th class = "day-border">End</th>
                 <th>Start</th>
-                <th>End</th>
+                <th class = "day-border">End</th>
                 <th>Start</th>
-                <th>End</th>
+                <th class = "day-border">End</th>
             </tr>
         </table>
     </div>
@@ -93,7 +89,7 @@
 
     <div>
         <label for="average-weekly-hours">Average Weekly Hours</label>
-        <input type="text" id="average-weekly-hours">
+        <input type="text" id="average-weekly-hours" readonly>
     </div>
 
     <script src="assets/js/script.js"></script>
