@@ -99,10 +99,16 @@ body {
   font-size: 16px;
 }
 
-
 /* Input box */
 input[type=text] {
   transition: width 0.4s ease-in-out;
+  width: 100%;
+  padding: 1px 1px;
+  margin: 4px ;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  text-align: center;
 
 }
 
