@@ -34,10 +34,8 @@ body {
   border-style: double;
 }
 
-
 #weeks-question {
   padding-top: 20px;
-  font: white;
 }
 
 #break-question {
@@ -75,7 +73,6 @@ body {
   border: solid 1px #DDEEEE;
   color: #333;
   padding: 1px;
-
 }
 
 /* User display table */
