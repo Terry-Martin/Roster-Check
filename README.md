@@ -10,44 +10,39 @@ One of the mian considerations when creating a roster is to ensure the hours in 
 
 ## Features 
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so. You will need to explain what value each of the features provides for the user, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
-
 ### Existing Features
 
-- __The Love Maths Logo and Heading__
+__Selecter Number of Weeks and whether paid or unpaid breaks__
+  - ![Drop down list and Raio buttons](assets/images/questions.jpg)
+  - These are the first 2 user inputs needed. 
+  - The number of weeks determines how many lines in the roster.
+  - Paid or unpaid breaks will effect the calculation for shift length. This is beacuse the shift length that is being caluclated is paid hours. This should match back to an employees contracted weekly hours.
 
-  - Featured at the top of the page, the Love Maths logo and heading is easy to see for the user. Upon viewing the page, the user will be able to see the name of the game.
 
-![Logo](media/love_maths_logo.png)
-![Alt text](assets/images/questions.jpg?raw=true "Title")
+__Enter Daily Start and End times__
 
-- __The Game Area__
+  - ![Input table](assets/images/input-table.jpg)
+  - The number of rows in this table will be based on the selection the user made in the above dropdown list.
+  - This table allows for inputs for Start and End time for each day. 
 
-  - This section will allow the user to play the maths game. The user will be able to easily see icons for addition,  subtraction, multiplication, and division games.
-  - The user will be able to select the type of maths game they will be playing by clicking on the different icons. 
 
-![Game](media/love_maths_icons.png)
+__Display Daily shift lengths__
 
-- __The Question section__
+  - ![Input table](assets/images/display-table.jpg)
+  - The number of rows in this table will maych the input table
+  - This is a readonly table which displays the length of each shift for each day. This is in demimal format.
 
-  - The question section is where the user will be able to see the elementary arithmetic question to answer as part of the game. The user will be able answer the questions in the answer box provide
-  - The user will be able to submit their answer and a pop-up will make it known to the user if they answered correctly. 
+__Average Weekly Hours__
 
-![Question](media/love_maths_question.png)
+  - ![Input table](assets/images/weekly-average-hours.jpg)
+  - This is straight forward calculation of the total number of shifts hours divided by the number of weeks.
+  - The average weekly hours are displayed as readonly
+  - The average weekly hours should be a check against whatever contracted hours a particular mployee has
 
-- __The Score Area__
+__Next Steps__
+  - Although mobile first is the recomended approach, for this particular pfoject, the recoended viewing is on a tablet or above. The reason for this is that weekly view is needed. Further disign would be needed to optimise this site for mobiles with the lielihood being a day view for each day of the roser rather than a weekly view but this too would be probleatic on rosters longer than 2 or 3 weeks.
 
-  - This section will allow the user to see exactly how many correct and incorrect answers they have provided. 
-
-![score](media/love_maths_answer.png)
-
-For some/all of your features, you may choose to reference the specific project files that implement them.
-
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
-
-### Features Left to Implement
-
-- Another feature idea
+  - Also, most robost checks are needed to ensure user does not select a roster below zero length shift.
 
 ## Testing 
 
